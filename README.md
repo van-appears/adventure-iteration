@@ -11,7 +11,7 @@ else:
 
 It made me wonder what could be written with only core coding concepts for a programming language (no libraries or external packages) that would be interesting to build and extending - something you could keep adding bits to, and refining your code. I thought maybe an old-school text adventure.
 
-I am not a game designer so I don't expect a _good_ adventure, but still this is an attempt to create a series of iterations, where each one adds a little bit more complexity to the previous version.
+I am not a game designer so I don't expect a good adventure, the main intention of this exercise is _iteration_ where each new version adds a little bit more complexity to the previous version.
 
 ## running
 
