@@ -1,4 +1,9 @@
 # version01
 
 A super-simple script, that barely counts as a game!
-Demonstrates a gaming while loop, and a simple conditional.
+
+## coding concepts
+* `while` loop
+* string `input`, and string functions `strip` and `lower`
+* `if`, `elif`, `not` and equals conditionals
+* simple `print`
