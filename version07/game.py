@@ -95,7 +95,7 @@ def describe_map():
         print(f"To the {direction} is the {room}.")
 
     if len(not_visited) > 0:
-        if (len(not_visited) > 1):
+        if len(not_visited) > 1:
             print(f"There are rooms to the {", ".join(not_visited)}")
         else:
             print(f"There is a room to the {not_visited[0]}.")
@@ -107,9 +107,9 @@ def move(action_string):
         next_room = exits[direction]
         STATE["room"] = next_room
         return True
-    else:
-        print("There is no exit there.")
-        return False
+
+    print("There is no exit there.")
+    return False
 
 def move_to(action_string):
     location = action_string.split(" ")[2]
@@ -119,9 +119,9 @@ def move_to(action_string):
             print(f"You walk back through the house to the {location}.")
         STATE["room"] = location
         return True
-    else:
-        print(f"You haven't visited any {location} yet.")
-        return False
+
+    print(f"You haven't visited any {location} yet.")
+    return False
 
 def hall_action(action):
     if has_state("eaten_honey"):
@@ -208,7 +208,10 @@ def office_action(action):
             print("The chest is already open")
         else:
             print("You have opened the chest.")
-            print("There is a key inside!")
+            if has_item("key"):
+                print("The chest is empty")
+            else:
+                print("There is a key inside!")
             set_state("chest_open")
             set_state("chest_opened")
 
@@ -275,7 +278,7 @@ def kitchen_action(action):
         if has_state("eaten_hotsauce"):
             print("You've already eaten the hotsauce.")
             print("Even thinking about it brings back sweats and headaches.")
-        elif has_state("cupboard_open") or has_item("hotsauce", state):
+        elif has_state("cupboard_open") or has_item("hotsauce"):
             print("You start drinking the whole bottle of hotsauce.")
             print("Aarrgh... so hot... so painful... your stomach hurts")
             print("You want to be sick.")
@@ -308,10 +311,10 @@ def main():
             moving = move(action)
             action = ""
 
-        if moving == False:
+        if moving is False:
             pass
 
-        if action == "instructions":
+        elif action == "instructions":
             print_instructions()
 
         elif action == "inventory":
@@ -334,13 +337,12 @@ def main():
         print("Game over")
         return True
 
-    elif has_state("died"):
+    if has_state("died"):
         print("You are very very dead. Bad luck!")
         print("Game over")
         return True
 
-    else:
-        return False
+    return False
 
 def game():
     system("clear||cls")
