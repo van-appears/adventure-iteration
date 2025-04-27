@@ -126,7 +126,10 @@ def office_action(action, state):
             print("The chest is already open")
         else:
             print("You have opened the chest.")
-            print("There is a key inside!")
+            if has_item("key", state):
+                print("The chest is empty.")
+            else:
+                print("There is a key inside!")
             state["chest_open"] = True
             state["chest_opened"] = True
 
