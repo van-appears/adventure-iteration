@@ -49,8 +49,11 @@ while not escaped:
         if chest_open:
             print("The chest is already open")
         else:
-            print("""You have opened the chest
-There is a key inside!""")
+            print("You have opened the chest")
+            if has_key:
+                print("The chest is empty.")
+            else:
+                print("There is a key inside!")
             chest_open = True
             chest_opened = True
 
