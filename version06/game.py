@@ -170,7 +170,10 @@ def office_action(action):
             print("The chest is already open")
         else:
             print("You have opened the chest.")
-            print("There is a key inside!")
+            if has_item("key"):
+                print("The chest is empty.")
+            else:
+                print("There is a key inside!")
             set("chest_open")
             set("chest_opened")
 

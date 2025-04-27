@@ -5,3 +5,13 @@ One useful change is to move STATE to a constant so we don't have to keep passin
 The map has been moved to a constant and methods `describe_map` and `move` added as a catch-all way to get around (though would proably break again if we added staircases).
 
 Still no instructions, inventory, 'move to' or 'quit' commands, or retry if you die, and the bug where you can only eat the honey in the kitchen still exists.
+
+## new game concepts
+* more consistent 'direction' information
+
+## new coding concepts
+* `len` keyword
+* string `join` and `startswith` methods
+* array `append` method
+* refactoring to pull direction information into its own `describe_map` function
+* refactoring to pull movement into its own `move` function
