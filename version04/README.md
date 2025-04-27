@@ -5,3 +5,10 @@ Adding another room and basic navigation; also separating each room into its own
 pylint rightly considers the `kitchen_action` method to have too many branches.
 
 This was the first version that I tried on my youngest child; having not played a game like this before the concepts were not clear e.g. for 'how will you escape' the suggestion I got was 'why not go out the window?'. Instructions might be useful, even if they explain the simple 'VERB NOUN' approach of Collossal Cave Adventure.
+
+## new game concepts
+* movement between two rooms
+
+## new coding concepts
+* separating rooms into their own functions for aiding readability
+* string templates (here using python3 f-strings)

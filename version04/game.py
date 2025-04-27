@@ -61,7 +61,10 @@ def kitchen_action(action, state):
             print("The chest is already open")
         else:
             print("You have opened the chest.")
-            print("There is a key inside!")
+            if state["has_key"]:
+                print("The chest is empty.")
+            else:
+                print("There is a key inside!")
             state["chest_open"] = True
             state["chest_opened"] = True
 
