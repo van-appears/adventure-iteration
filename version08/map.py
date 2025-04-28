@@ -3,13 +3,17 @@ from state import has_state, set_state
 MAP = {
     "hall": {
         "north": "kitchen",
-        "south": "office"
+        "south": "library"
     },
     "kitchen": {
         "south": "hall"
     },
+    "library": {
+        "north": "hall",
+        "west": "office"
+    },
     "office": {
-        "north": "hall"
+        "east": "library"
     }
 }
 

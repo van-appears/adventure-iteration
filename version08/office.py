@@ -11,17 +11,6 @@ def office_action(action):
     elif action == "":
         print("You are in the office.")
 
-    elif is_synonym_of(action, "take", "key"):
-        if has_item("key"):
-            print("You already have the key")
-        elif has_state("chest_open"):
-            print("You have taken the key")
-            add_item("key")
-        elif has_state("chest_opened"):
-            print("You can't take the key, you closed the chest")
-        else:
-            print("What key?")
-
     elif is_synonym_of(action, "take", "chest"):
         print("The chest is far too heavy")
 
@@ -30,9 +19,8 @@ def office_action(action):
             print("The chest is already open")
         else:
             print("You have opened the chest.")
-            print("There is a key inside!")
+            print("On the inside of the lid is the word 'Earthsea'.")
             set_state("chest_open")
-            set_state("chest_opened")
 
     elif is_synonym_of(action, "close", "chest"):
         if has_state("chest_open"):

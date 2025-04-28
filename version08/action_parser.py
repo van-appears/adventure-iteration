@@ -7,7 +7,9 @@ SYNONYMS = {
     "attack": ["attack", "kick", "punch", "fight"],
     "pet": ["pet", "stroke", "cuddle", "pat"],
     "consume": ["consume", "eat", "drink"],
-    "give": ["give", "throw", "drop"]
+    "give": ["give", "throw", "drop"],
+    "read": ["read"],
+    "find": ["find", "locate"]
 }
 
 def starts_with_synonym(action_string, verb):

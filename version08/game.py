@@ -2,6 +2,7 @@ from os import system
 from hall import hall_action
 from kitchen import kitchen_action
 from office import office_action
+from library import library_action
 
 from state import reset, has_state, set_state, print_inventory
 from action_parser import is_synonym_of, starts_with_synonym
@@ -46,6 +47,8 @@ def main():
             kitchen_action(action)
         elif has_state("room") == "office":
             office_action(action)
+        elif has_state("room") == "library":
+            library_action(action)
 
     if has_state("escaped"):
         print("You open the door and walk out into the sunshine. Well done!")
@@ -82,4 +85,5 @@ def game():
 
     print("Goodbye!")
 
-game()
+if __name__ == "__main__":
+    game()
