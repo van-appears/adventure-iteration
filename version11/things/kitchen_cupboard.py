@@ -1,7 +1,7 @@
 from game.state import has_state, set_state, inventory
-from things.Thing import Thing
-from things.Honey import Honey
-from things.Hotsauce import Hotsauce
+from things.thing import Thing
+from things.honey import Honey
+from things.hotsauce import Hotsauce
 
 class KitchenCupboard(Thing):
     def __init__(self):
@@ -17,7 +17,7 @@ class KitchenCupboard(Thing):
             print("The cupboard is bare.")
 
     def perform_action(self, action):
-        verb, noun = action
+        verb, _ = action
 
         if verb == "open":
             if has_state("cupboard_open"):
@@ -25,7 +25,7 @@ class KitchenCupboard(Thing):
             elif inventory().has_item_with_key("key"):
                 print("You unlock the cupboard.")
                 print("There is a bottle of hotsauce and a pot of honey inside.")
-                self.items = [Honey(), Hotsauce()]
+                self.items.extend([Honey(), Hotsauce()])
                 set_state("cupboard_open")
             else:
                 print("You can't, the cupboard is locked.")

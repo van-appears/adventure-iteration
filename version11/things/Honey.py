@@ -1,5 +1,5 @@
 from game.state import has_state, set_state
-from things.Thing import Thing
+from things.thing import Thing
 
 class Honey(Thing):
     def __init__(self):
@@ -12,7 +12,7 @@ class Honey(Thing):
             print("It is a mostly full jar of local honey.")
 
     def perform_action(self, action):
-        verb, noun = action
+        verb, _ = action
 
         if verb == "consume":
             if has_state("eaten_honey"):

@@ -1,4 +1,4 @@
-from things.Thing import Thing
+from things.thing import Thing
 
 class KitchenFridge(Thing):
     def __init__(self):

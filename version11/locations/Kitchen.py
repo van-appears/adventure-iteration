@@ -1,7 +1,6 @@
-from game.state import has_state, set_state, inventory
-from locations.Location import Location
-from things.KitchenCupboard import KitchenCupboard
-from things.KitchenFridge import KitchenFridge
+from locations.location import Location
+from things.kitchen_cupboard import KitchenCupboard
+from things.kitchen_fridge import KitchenFridge
 
 class Kitchen(Location):
     def __init__(self):

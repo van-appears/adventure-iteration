@@ -1,6 +1,6 @@
-from game.state import has_state, set_state, inventory
-from locations.Location import Location
-from things.KitchenCupboardKey import KitchenCupboardKey
+from game.state import inventory
+from locations.location import Location
+from things.kitchen_cupboard_key import KitchenCupboardKey
 
 class Library(Location):
     def short_description(self):
@@ -14,16 +14,16 @@ class Library(Location):
     def perform_action(self, action):
         verb, noun = action
 
-        if (verb == "find" or verb == "read") and noun == "earthsea":
+        if verb in ("find", "read") and noun == "earthsea":
             print("You find the copy of Earthsea on the shelves.")
             if inventory().has_item_with_key("key"):
                 print("You open the book to find it is hollow in the middle, now empty.")
             else:
                 print("You open the book to find it is hollow in the middle, and containing a key.")
-                self.add_item(KitchenCupboardKey());
+                self.add_item(KitchenCupboardKey())
             return True
 
-        elif verb == "find" or verb == "read":
+        if verb in ("find", "read"):
             print("There are hundreds of books here, but not that one.")
             return True
 

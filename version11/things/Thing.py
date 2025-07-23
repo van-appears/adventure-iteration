@@ -1,4 +1,4 @@
-from game.Container import Container
+from game.container import Container
 
 class Thing(Container):
     def __init__(self, key, carryable=False, items=None):

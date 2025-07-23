@@ -1,7 +1,7 @@
-from locations.Hall import Hall
-from locations.Kitchen import Kitchen
-from locations.Library import Library
-from locations.Office import Office
+from locations.hall import Hall
+from locations.kitchen import Kitchen
+from locations.library import Library
+from locations.office import Office
 
 LOCATIONS = {
     "hall": Hall(),

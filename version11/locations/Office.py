@@ -1,6 +1,5 @@
-from game.state import has_state, set_state
-from locations.Location import Location
-from things.OfficeChest import OfficeChest
+from locations.location import Location
+from things.office_chest import OfficeChest
 
 class Office(Location):
     def __init__(self):

@@ -16,12 +16,11 @@ SYNONYMS = {
 
 def parse_action(action_string):
     action_string = action_string.strip().lower()
-    for parent_verb in SYNONYMS:
-        for synonym in SYNONYMS[parent_verb]:
+    for parent_verb, synonym_verbs in SYNONYMS.items():
+        for synonym in synonym_verbs:
             if action_string.startswith(f"{synonym} ") or action_string == synonym:
                 noun = action_string[len(synonym)::].strip()
                 if len(noun) == 0:
                     return (parent_verb, None)
-                else:
-                    return (parent_verb, noun)
+                return (parent_verb, noun)
     return (action_string, None)

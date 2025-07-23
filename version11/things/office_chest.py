@@ -1,5 +1,5 @@
 from game.state import has_state, set_state
-from things.Thing import Thing
+from things.thing import Thing
 
 class OfficeChest(Thing):
     def __init__(self):
@@ -22,7 +22,7 @@ class OfficeChest(Thing):
                 set_state("chest_open")
             return True
 
-        elif verb == "close" and noun == "chest":
+        if verb == "close" and noun == "chest":
             if has_state("chest_open"):
                 print("You have closed the chest")
                 set_state("chest_open", False)

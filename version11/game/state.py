@@ -1,4 +1,4 @@
-from game.Container import Container
+from game.container import Container
 
 STATE = {
     "inventory": Container()

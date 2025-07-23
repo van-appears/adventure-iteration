@@ -3,7 +3,7 @@ class Container:
         if items is None:
             self.items = []
         else:
-            self.items = items;
+            self.items = items
 
     def item_keys(self):
         item_keys = []

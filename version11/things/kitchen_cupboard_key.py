@@ -1,7 +1,5 @@
 from game.state import has_state, set_state, inventory
-from things.Thing import Thing
-from things.Honey import Honey
-from things.Hotsauce import Hotsauce
+from things.thing import Thing
 
 class KitchenCupboardKey(Thing):
     def __init__(self):

@@ -1,10 +1,10 @@
-from game.Container import Container
+from game.container import Container
 from game.state import inventory
 
 class Location(Container):
     def __init__(self, items=None):
-        self.visited = False
         super().__init__(items)
+        self.visited = False
 
     def visit(self):
         self.visited = True
