@@ -1,4 +1,3 @@
-from game.state import has_state, set_state, inventory
 from things.thing import Thing
 
 class KitchenCupboardKey(Thing):
