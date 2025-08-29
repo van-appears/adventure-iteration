@@ -13,9 +13,9 @@ class OfficeChest(Thing):
 
         if verb == "open":
             if has_state("fridge_opened"):
-                print("You open the fridge to find... nothing, it's just as empty as the fridge.")
+                print("You open the chest to find... nothing, it's just as empty as the fridge.")
             else:
-                print("You open the fridge to find... nothing, not even a paperclip.")
+                print("You open the chest to find... nothing, not even a paperclip.")
             set_state("chest_opened")
             return True
 
