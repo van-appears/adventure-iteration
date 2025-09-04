@@ -1,0 +1,25 @@
+from base.state import inventory, has_state
+from things.thing import Thing
+from things.kitchen_cupboard_key import KitchenCupboardKey
+
+class Book(Thing):
+    def __init__(self, book_key):
+        super().__init__(key=book_key, carryable=True, described=True)
+
+    def long_description(self):
+        book_name = has_state("book_name")
+        author = has_state("author")
+        print(f"It's a copy of the classic '{book_name}' novel, by {author}.")
+
+    def perform_action(self, action):
+        verb, _ = action
+        if verb in ("open", "read"):
+            if inventory().has_direct_item_with_key("small key"):
+                print("You open the book to find it is hollow in the middle, now empty.")
+            else:
+                print("You open the book to find it is hollow in the middle, and containing a key.")
+                if not self.has_direct_item_with_key("small key"):
+                    self.add_item(KitchenCupboardKey())
+            return True
+
+        return False
